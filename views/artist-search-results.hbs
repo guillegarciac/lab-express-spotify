@@ -1,3 +1,11 @@
 <div>
-  <img src="{{url}}" alt={{name}}>
+  {{#each items}}
+    <h3>name: {{name}}</h3>
+    <h2>followers {{follorers.total}}</h2>
+    <h2>popularity {{popularity}} </h2>
+    {{!-- To show only the third (small) image of the object #with images.[2]--}}
+    {{#with images.[2]}}  
+      <img src="{{url}}" alt={{name}}>
+    {{/with}}
+  {{/each}}
 </div>
