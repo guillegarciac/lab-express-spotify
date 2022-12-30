@@ -25,6 +25,11 @@ app.use(express.static(__dirname + '/public'));
 
 // setting the spotify-api goes here:
 
+//1 index route
+app.get("/", (req, res, next) => {
+  res.render("index");
+})
+
 // Our routes go here:
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
