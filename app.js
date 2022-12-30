@@ -30,6 +30,27 @@ app.get("/", (req, res, next) => {
   res.render("index");
 })
 
+//2 display results for artist search
+app.get("/artist-search", async (req, res, next) => {
+  const { artist } = req.query;
+  spotifyApi
+  .searchArtists(`${artist}`)
+  .then(data => {
+    console.log('The received data from the API: ', data.body);
+    //created data.body.artists to enter the artists: {Object}
+    const apiResponse = data.body.artists;
+    //some tests playing with the api 👇
+    //console.log("Artists Matching", response.items);
+    //console.log("First Artist Match", response.items[0]);
+    //console.log(`${artist} followers:`, response.items[0].followers.total)
+    //console.log(`${artist} first img`, response.items[0].images[0])
+    // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API' > in this case the first img of the first artist
+    res.render("artist-search-results", apiResponse.items[0].images[0])    
+  })
+  .catch(err => console.log('The error while searching artists occurred: ', err));
+})
+
+
 // Our routes go here:
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
