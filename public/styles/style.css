@@ -5,16 +5,22 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+  line-height: 1;
+  background: #000;
+}
+
 /* ARTIST CARDS */
 .artist-card {
   width: 75%;
   position: relative;
   max-width: 800px;
   margin: auto;
-  background: rgb(8, 8, 8);
+  background: rgba(0, 0, 0, 0.526);
   box-shadow: 0px 14px 80px rgb(34 35 58 / 20%);
   padding: 22px;
   border-radius: 25px;
+  border: solid 0.2px rgba(80, 218, 119, 0.564);
   height: 280px;
   display: flex;
   margin-top: 10px;
@@ -35,7 +41,7 @@ margin: 0px 25px;
 }
 
 .artist-card:hover {
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+box-shadow: 0 5px 30px 0 rgba(21, 170, 21, 0.452);
 }
 
 .card-container-artist {
@@ -47,8 +53,8 @@ justify-content: center;
 }
 
 .card-container {
-padding: 0px 40px;
-width: 85vw;
+  padding: 15px 50px;
+  width: 30vw;
 }
 
 .card-container > h3 {
@@ -62,7 +68,9 @@ font-size: 16px;
 
 /* SEE MORE BUTTONS */
 #button-see-more {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
 }
 
 #button-see-more > a {
