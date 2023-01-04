@@ -1,23 +1,29 @@
-<div>
-<h1>Artist Results</h1>
-{{#each items}}
-  <div class="artist-card">
-    {{!-- To show only the third (small) image of the object #with images.[2]--}}
-    <div class="card-container-artist">
-      {{#with images.[2]}}  
-        <img height="250" src="{{url}}" alt={{name}}>
-      {{/with}}
-    </div>
-    <div class="card-container">
-      <h3>{{name}}</h3>
-      <h2>Followers {{follorers.total}}</h2>
-      <h2>Trending Score {{popularity}} </h2>
-      <div id="button-see-more">
-        <a href="/albums/{{_id}}">See albums</a>
+<body>
+  <header>
+    <nav id="nav-bar">
+      <a href="/"> ← Go back</a>
+    </nav>
+  </header>
+  <div>
+    <h1>Artist Results</h1>
+    {{#each items}}
+      <div class="artist-card">
+        {{!-- To show only the third (small) image of the object #with images.[2]--}}
+        <div class="card-container-artist">
+          {{#with images.[2]}}  
+            <img height="250" src="{{url}}" alt={{name}}>
+          {{/with}}
+        </div>
+        <div class="card-container">
+          <h3>{{name}}</h3>
+          <h2>Followers {{follorers.total}}</h2>
+          <h2>Trending Score {{popularity}} </h2>
+          <div id="button-see-more">
+            <a href="/albums/{{_id}}">See albums</a>
+          </div>
+        </div>  
       </div>
-    </div>  
+    {{/each}}
   </div>
-{{/each}}
-</div>
-
+</body>
 
