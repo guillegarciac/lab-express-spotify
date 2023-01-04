@@ -10,6 +10,12 @@ body {
   background: #000;
 }
 
+h1 {
+  font-size: 75px;
+  color:white;
+  padding: 50px 275px 50px 275px;
+}
+
 /* ARTIST CARDS */
 .artist-card {
   width: 75%;
@@ -18,7 +24,7 @@ body {
   margin: auto;
   background: rgba(0, 0, 0, 0.526);
   box-shadow: 0px 14px 80px rgb(34 35 58 / 20%);
-  padding: 22px;
+  padding: 10px;
   border-radius: 25px;
   border: solid 0.2px rgba(80, 218, 119, 0.564);
   height: 280px;
@@ -84,4 +90,35 @@ font-size: 16px;
   width: 150px;
   justify-content: center;
   align-self: flex-end;
+}
+
+/* Home Forms */
+
+.search-form {
+	margin: 100px;
+	background-color: white;
+	padding: 40px;
+  width: 50%;
+}
+
+.search-form h2{
+	color: #1fdc4f;
+}
+
+input[type="text"], input[type="number"], textarea {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 15px 0px;
+	padding: 12px 20px;
+
+}
+
+button {
+	margin: 15px 0px;
+	padding: 20px;
+	font-size: 18px;
+	width: 100%;
+	background-color: #1fdc4f;
+	color: whitesmoke;
+	border: none;
 }
