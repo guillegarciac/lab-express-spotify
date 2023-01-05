@@ -57,7 +57,7 @@ app.get("/artist-search", async (req, res, next) => {
   spotifyApi
   .searchArtists(`${artist}`)
   .then(data => {
-    console.log('The received search data from the API: ', data.body);
+    //console.log('The received search data from the API: ', data.body);
     //created data.body.artists to enter the artists: {Object}
     const apiSearchResponse = data.body.artists;
     res.render("artist-search-results", apiSearchResponse)    
