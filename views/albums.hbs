@@ -1,0 +1,22 @@
+<body>
+  <header>
+    <nav id="nav-bar">
+      <a href="/artist-search"> ← Go back</a>
+    </nav>
+  </header>
+  <div>
+    <h1>{{items.0.artists.0.name}} Albums</h1>
+    {{#each items}} 
+      <div class="artist-card">
+        <div class="card-container-artist">
+          {{#with images.[1]}}  
+          <img src="{{url}}" alt={{name}}>
+          {{/with}}
+        </div>
+        <div class="card-container">
+          <h3>{{name}}</h3>	        
+        </div>
+      </div>
+    {{/each}}	
+  </div>
+</body>    

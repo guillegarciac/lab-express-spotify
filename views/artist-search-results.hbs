@@ -8,9 +8,9 @@
     <h1>Artist Results</h1>
     {{#each items}}
       <div class="artist-card">
-        {{!-- To show only the third (small) image of the object #with images.[2]--}}
+        {{!-- To show only the third (small) image of the object #with images.[2], however using 1 for better resolution and reducing height--}}
         <div class="card-container-artist">
-          {{#with images.[2]}}  
+          {{#with images.[1]}}  
             <img height="250" src="{{url}}" alt={{name}}>
           {{/with}}
         </div>
@@ -19,7 +19,7 @@
           <h2>Followers {{follorers.total}}</h2>
           <h2>Trending Score {{popularity}} </h2>
           <div id="button-see-more">
-            <a href="/albums/{{_id}}">See albums</a>
+            <a href="/albums/{{id}}" method="GET" name="artistId">See albums</a>
           </div>
         </div>  
       </div>
