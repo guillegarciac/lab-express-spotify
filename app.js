@@ -34,10 +34,11 @@ app.get("/", (req, res, next) => {
 //2 display results for artist picture (extra)
 app.get("/artist-picture", async (req, res, next) => {
   const { artist } = req.query;
+  const { artistId } = req.params;
   spotifyApi
   .searchArtists(`${artist}`)
   .then(data => {
-    console.log('The received data from the API: ', data.body);
+    //console.log('The received data from the API: ', data.body);
     //created data.body.artists to enter the artists: {Object}
     const apiResponse = data.body.artists;
     //some tests playing with the api 👇
@@ -46,7 +47,7 @@ app.get("/artist-picture", async (req, res, next) => {
     //console.log(`${artist} followers:`, response.items[0].followers.total)
     //console.log(`${artist} first img`, response.items[0].images[0])
     // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API' > in this case the first img of the first artist
-    res.render("artist-picture-result", apiResponse.items[0].images[0])    
+    res.render("artist-picture-result", {artist, artistId, ...apiResponse.items[0].images[0], ...apiResponse.items[0]})  
   })
   .catch(err => console.log('The error while searching artists occurred: ', err));
 })

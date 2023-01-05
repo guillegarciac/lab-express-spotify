@@ -4,7 +4,15 @@
       <a href="/"> ← Go back</a>
     </nav>
   </header>
-<div>
-  <img src="{{url}}" alt={{name}}>
-</div>
+  <div>
+    <h1>artist: {{artist}}</h1>
+    <h2>id: {{id}}</h2>
+    <div class="main-image">
+        <img src="{{url}}" alt={{name}}>
+    </div>
+    <div id="button-albums-picture">
+        <a href="/albums/{{id}}?artist={{artist}}" method="GET" name="artistId">See albums</a>
+      </div>
+  </div>
 </body>
+

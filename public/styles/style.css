@@ -13,7 +13,13 @@ body {
 h1 {
   font-size: 75px;
   color: #fff;
-  padding: 80px 200px 60px 200px;
+  padding: 80px 200px 25px 200px;
+}
+
+h2 {
+  font-size: 45px;
+  color: #fff;
+  padding: 0px 200px 0px 200px;
 }
 
 /* NAVIGATION */
@@ -51,6 +57,19 @@ header nav ul li {
 header nav a #nav-logo {
   height: 4.5vh;
   margin: 1vh 1vh 0vh 0vh;
+}
+
+/* MAIN IMAGE CARD */
+
+.main-image {
+  max-width: fit-content;
+  margin: auto;
+  padding: 20px;
+  border-radius: 25px;
+  border: solid 0.2px #1DB954;
+  height: 300px;
+  display: flex;
+  margin-top: 5%;
 }
 
 /* ARTIST CARDS */
@@ -141,8 +160,29 @@ audio {
 }
 
 #button-see-more > a {
-  background: #1DB954
-;
+  background: #1DB954;
+  color: #fff;
+  padding: 15px 0px;
+  margin-top: 40px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+/* ALBUMS PICTURE BUTTON */
+#button-albums-picture {
+    flex-direction: column;
+    max-width: fit-content;
+    margin: auto;
+    height: 300px;
+}
+
+
+#button-albums-picture > a {
+  background: #1DB954;
   color: #fff;
   padding: 15px 0px;
   margin-top: 40px;
