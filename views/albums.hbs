@@ -1,7 +1,7 @@
 <body>
   <header>
     <nav id="nav-bar">
-      <a href="/artist-search"> ← Go back</a>
+      <a href="/artist-search?artist={{artist}}"> ← Go back</a>
     </nav>
   </header>
   <div>
@@ -14,7 +14,10 @@
           {{/with}}
         </div>
         <div class="card-container">
-          <h3>{{name}}</h3>	        
+          <h3>{{name}}</h3>
+          <div id="button-see-more">
+            <a href="/albums/{{../artistId}}/tracks/{{id}}?artist={{../artist}}" method="GET" name="tracks">Check tracks</a>
+          </div>	        
         </div>
       </div>
     {{/each}}	

@@ -57,26 +57,39 @@ app.get("/artist-search", async (req, res, next) => {
   spotifyApi
   .searchArtists(`${artist}`)
   .then(data => {
-    //console.log('The received search data from the API: ', data.body);
+    //console.log('The received search data from the API: ', data.body, artist);
     //created data.body.artists to enter the artists: {Object}
     const apiSearchResponse = data.body.artists;
-    res.render("artist-search-results", apiSearchResponse)    
+    res.render("artist-search-results", {artist, ...apiSearchResponse})    
   })
   .catch(err => console.log('The error while searching artists occurred: ', err));
 })
 
 //3 view albums
 app.get("/albums/:artistId", (req, res, next) => {
+  const { artist } = req.query;
   const { artistId } = req.params;
   spotifyApi
       .getArtistAlbums(artistId)
       .then(data => {
           const response = data.body;
-          res.render("albums", response);
+          res.render("albums", {artist, artistId, ...response});
       })
       .catch(err => console.log("An error while searching the album occured: ", err));
 })
 
+//4 view tracks
+app.get("/albums/:artistId/tracks/:albumId", (req, res, next) => {
+  const { artist } = req.query;
+  const { artistId, albumId } = req.params;
+  spotifyApi
+      .getAlbumTracks(albumId)
+      .then(data => {
+          const response = data.body;
+          res.render("tracks", {artist, artistId, albumId, ...response});
+      })
+      .catch(err => console.log("An error while searching the tracks occured: ", err));
+})
 
 // Our routes go here:
 
