@@ -213,9 +213,10 @@ background: #1db954b9;
   border-radius: 20px;
 }
 
-.search-form h2{
-	color: #1DB954;
+.search-form h2 {
+  color: #1DB954;
   font-size: 30px;
+  padding: 0px 0px 10px;
 }
 
 input[type="text"], input[type="number"], textarea {
