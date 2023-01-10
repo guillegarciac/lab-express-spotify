@@ -11,8 +11,9 @@
         <img src="{{url}}" alt={{name}}>
     </div>
     <div id="button-albums-picture">
-        <a href="/albums/{{id}}?artist={{artist}}" method="GET" name="artistId">See albums</a>
-      </div>
+      <a href="/albums/{{id}}?artist={{artist}}" method="GET" name="artistId">See albums</a>
+      {{!-- the method and name are not necessary for the app to work since the route already knows it GET type --}}
+    </div>
   </div>
 </body>
 
